@@ -8,10 +8,11 @@ const observer = new IntersectionObserver(
     })
   },
   {
-    threshold: 1,
+    threshold: 1, // element fully visible
   }
 )
 
+// Infinite scroll with new cards
 const lastCardObserver = new IntersectionObserver(
   (entries) => {
     const lastCard = entries[0]
@@ -21,7 +22,7 @@ const lastCardObserver = new IntersectionObserver(
     lastCardObserver.observe(document.querySelector('.card:last-child'))
   },
   {
-    rootMargin: '100px',
+    rootMargin: '100px', //loads new cards outside view
   }
 )
 
